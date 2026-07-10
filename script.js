@@ -3,13 +3,13 @@ let spinning = false;
 let interval;
 
 const pieces = [
-    "images/i.png",
-    "images/o.png",
-    "images/t.png",
-    "images/l.png",
-    "images/j.png",
-    "images/s.png",
-    "images/z.png"
+    "Images/i.png",
+    "Images/o.png",
+    "Images/t.png",
+    "Images/l.png",
+    "Images/j.png",
+    "Images/s.png",
+    "Images/z.png"
 ];
 
 const pieceDisplay = document.getElementById("piece");
