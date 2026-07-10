@@ -1,18 +1,107 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Vibe Event Co. - Giant Tetris Tumble</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vibe Event Co. - Giant Tetris Tumble</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #f8f8f8;
+    margin: 0;
+    padding: 20px;
+}
+
+.logo {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff7a00;
+    margin-top: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.subtitle {
+    color: #666;
+    font-size: 18px;
+}
+
+.game-box {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 400px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+#piece {
+    font-size: 80px;
+    margin: 30px;
+}
+
+button {
+    background: #ff7a00;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 18px 50px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.footer {
+    margin-top: 30px;
+    color: #777;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>VIBE EVENT CO.</h1>
+<div class="logo">
+VIBE EVENT CO.
+</div>
 
-<h2>Giant Tetris Tumble</h2>
+<h1>
+Giant Tetris Tumble
+</h1>
 
-<p>Your Tetris Challenge Starts Here!</p>
+<p class="subtitle">
+Your Tetris Challenge Starts Here!
+</p>
 
-<button>SPIN</button>
+
+<div class="game-box">
+
+<h2>Your Piece Is:</h2>
+
+<div id="piece">
+🧩
+</div>
+
+<button>
+SPIN
+</button>
+
+</div>
+
+
+<div class="footer">
+Scan • Spin • Play
+</div>
+
 
 </body>
 </html>
