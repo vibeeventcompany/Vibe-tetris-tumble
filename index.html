@@ -6,6 +6,7 @@
 <title>Vibe Event Co. - Giant Tetris Tumble</title>
 
 <style>
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
@@ -39,9 +40,10 @@ h1 {
     box-shadow: 0 5px 20px rgba(0,0,0,.1);
 }
 
-#piece {
-    font-size: 80px;
-    margin: 30px;
+#piece img {
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
 }
 
 button {
@@ -49,14 +51,19 @@ button {
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 18px 50px;
-    font-size: 24px;
+    padding: 18px 40px;
+    font-size: 22px;
     font-weight: bold;
+    margin: 10px;
     cursor: pointer;
 }
 
 button:hover {
     transform: scale(1.05);
+}
+
+.stop {
+    background: #333;
 }
 
 .footer {
@@ -92,7 +99,8 @@ Your Tetris Challenge Starts Here!
 </div>
 
 <button onclick="spin()">SPIN</button>
-<button onclick="stopSpin()">STOP</button>
+
+<button class="stop" onclick="stopSpin()">STOP</button>
 
 </div>
 
@@ -101,7 +109,60 @@ Your Tetris Challenge Starts Here!
 Scan • Spin • Play
 </div>
 
-<script src="script.js"></script>
-    
+
+<script>
+
+let spinning = false;
+let interval;
+
+const pieces = [
+    "images/i.png",
+    "images/o.png",
+    "images/t.png",
+    "images/l.png",
+    "images/j.png",
+    "images/s.png",
+    "images/z.png"
+];
+
+const pieceDisplay = document.getElementById("piece");
+
+
+function showPiece() {
+
+    let randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
+
+    pieceDisplay.innerHTML =
+    `<img src="${randomPiece}">`;
+
+}
+
+
+function spin() {
+
+    if (spinning) return;
+
+    spinning = true;
+
+    interval = setInterval(showPiece, 100);
+
+}
+
+
+function stopSpin() {
+
+    if (!spinning) return;
+
+    clearInterval(interval);
+
+    showPiece();
+
+    spinning = false;
+
+}
+
+</script>
+
+
 </body>
 </html>
