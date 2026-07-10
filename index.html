@@ -88,7 +88,7 @@ button:hover {
 <body>
 
 <div class="logo">
-VIBE EVENT CO.
+VIBE EVENT COMPANY
 </div>
 
 <h1>
@@ -205,86 +205,6 @@ function stopSpin() {
 
 }
 
-
-</script>
-
-
-</body>
-</html><p class="subtitle">
-Your Tetris Challenge Starts Here!
-</p>
-
-
-<div class="game-box">
-
-<h2>Your Piece Is:</h2>
-
-<div id="piece">
-🧩
-</div>
-
-<button onclick="spin()">SPIN</button>
-
-<button class="stop" onclick="stopSpin()">STOP</button>
-
-</div>
-
-
-<div class="footer">
-Scan • Spin • Play
-</div>
-
-
-<script>
-
-let spinning = false;
-let interval;
-
-const pieces = [
-    "images/i.png",
-    "images/o.png",
-    "images/t.png",
-    "images/l.png",
-    "images/j.png",
-    "images/s.png",
-    "images/z.png"
-];
-
-const pieceDisplay = document.getElementById("piece");
-
-
-function showPiece() {
-
-    let randomPiece = pieces[Math.floor(Math.random() * pieces.length)];
-
-    pieceDisplay.innerHTML =
-    `<img src="${randomPiece}">`;
-
-}
-
-
-function spin() {
-
-    if (spinning) return;
-
-    spinning = true;
-
-    interval = setInterval(showPiece, 100);
-
-}
-
-
-function stopSpin() {
-
-    if (!spinning) return;
-
-    clearInterval(interval);
-
-    showPiece();
-
-    spinning = false;
-
-}
 
 </script>
 
