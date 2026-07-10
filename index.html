@@ -3,7 +3,7 @@
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vibe Event Company Giant Tetris Tumble</title>
+<title>Vibe Event Company - Giant Tetris Tumble</title>
 
 <style>
 
@@ -16,7 +16,7 @@ body {
 }
 
 .logo {
-    font-size: 28px;
+    font-size: 30px;
     font-weight: bold;
     color: #ff7a00;
     margin-top: 20px;
@@ -24,6 +24,7 @@ body {
 
 h1 {
     color: #333;
+    margin-bottom: 5px;
 }
 
 .subtitle {
@@ -33,19 +34,24 @@ h1 {
 
 .game-box {
     background: white;
-    border-radius: 20px;
+    border-radius: 25px;
     padding: 30px;
     margin: 30px auto;
-    max-width: 400px;
+    max-width: 420px;
     box-shadow: 0 5px 20px rgba(0,0,0,.1);
 }
 
+#piece {
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #piece img {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     object-fit: contain;
-    display: block;
-    margin: auto;
 }
 
 button {
@@ -53,7 +59,7 @@ button {
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 18px 40px;
+    padding: 18px 45px;
     font-size: 22px;
     font-weight: bold;
     margin: 10px;
@@ -71,11 +77,13 @@ button:hover {
 .footer {
     margin-top: 30px;
     color: #777;
+    font-size: 16px;
 }
 
 </style>
 
 </head>
+
 
 <body>
 
@@ -88,6 +96,121 @@ Giant Tetris Tumble
 </h1>
 
 <p class="subtitle">
+Your Tetris Challenge Starts Here!
+</p>
+
+
+<div class="game-box">
+
+<h2>Your Piece Is:</h2>
+
+<div id="piece">
+🧩
+</div>
+
+
+<button onclick="spin()">
+SPIN
+</button>
+
+<button class="stop" onclick="stopSpin()">
+STOP
+</button>
+
+
+</div>
+
+
+<div class="footer">
+Scan • Spin • Play
+</div>
+
+
+
+<script>
+
+let spinning = false;
+let interval;
+
+
+// Tetris images
+
+const pieces = [
+    "images/i.png",
+    "images/o.png",
+    "images/t.png",
+    "images/l.png",
+    "images/j.png",
+    "images/s.png",
+    "images/z.png"
+];
+
+
+// Preload images
+
+pieces.forEach(function(piece) {
+
+    let img = new Image();
+    img.src = piece;
+
+});
+
+
+
+const pieceDisplay = document.getElementById("piece");
+
+
+
+// Show random piece
+
+function showPiece() {
+
+    let randomPiece =
+    pieces[Math.floor(Math.random() * pieces.length)];
+
+
+    pieceDisplay.innerHTML =
+    `<img src="${randomPiece}">`;
+
+}
+
+
+
+// Start spinning
+
+function spin() {
+
+    if (spinning) return;
+
+    spinning = true;
+
+    interval =
+    setInterval(showPiece, 250);
+
+}
+
+
+
+// Stop spinning
+
+function stopSpin() {
+
+    if (!spinning) return;
+
+    clearInterval(interval);
+
+    showPiece();
+
+    spinning = false;
+
+}
+
+
+</script>
+
+
+</body>
+</html><p class="subtitle">
 Your Tetris Challenge Starts Here!
 </p>
 
